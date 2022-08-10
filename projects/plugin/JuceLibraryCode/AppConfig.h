@@ -27,12 +27,12 @@
 /*
   ==============================================================================
 
-   In accordance with the terms of the JUCE 6 End-Use License Agreement, the
+   In accordance with the terms of the JUCE 7 End-Use License Agreement, the
    JUCE Code in SECTION A cannot be removed, changed or otherwise rendered
    ineffective unless you have a JUCE Indie or Pro license, or are using JUCE
    under the GPL v3 license.
 
-   End User License Agreement: www.juce.com/juce-6-licence
+   End User License Agreement: www.juce.com/juce-7-licence
 
   ==============================================================================
 */
@@ -47,7 +47,7 @@
 
 #define JUCE_USE_DARK_SPLASH_SCREEN 1
 
-#define JUCE_PROJUCER_VERSION 0x60008
+#define JUCE_PROJUCER_VERSION 0x70000
 
 //==============================================================================
 #define JUCE_MODULE_AVAILABLE_hi_backend                    1
@@ -120,8 +120,12 @@
  #define   USE_COPY_PROTECTION 0
 #endif
 
+#ifndef    USE_SCRIPT_COPY_PROTECTION
+ //#define USE_SCRIPT_COPY_PROTECTION 0
+#endif
+
 #ifndef    USE_IPP
- #define   USE_IPP 1
+ #define   USE_IPP 0
 #endif
 
 #ifndef    USE_VDSP_FFT
@@ -194,6 +198,10 @@
 
 #ifndef    READ_ONLY_FACTORY_PRESETS
  //#define READ_ONLY_FACTORY_PRESETS 0
+#endif
+
+#ifndef    CONFIRM_PRESET_OVERWRITE
+ //#define CONFIRM_PRESET_OVERWRITE 1
 #endif
 
 #ifndef    ENABLE_CONSOLE_OUTPUT
@@ -353,7 +361,7 @@
 #endif
 
 #ifndef    JUCE_JACK
- //#define JUCE_JACK 1
+ //#define JUCE_JACK 0
 #endif
 
 #ifndef    JUCE_BELA
@@ -467,6 +475,10 @@
  //#define JUCE_FORCE_DEBUG 0
 #endif
 
+#ifndef    JUCE_ENABLE_AUDIO_GUARD
+ //#define JUCE_ENABLE_AUDIO_GUARD 0
+#endif
+
 #ifndef    JUCE_LOG_ASSERTIONS
  //#define JUCE_LOG_ASSERTIONS 0
 #endif
@@ -505,10 +517,6 @@
 
 #ifndef    JUCE_ENABLE_ALLOCATION_HOOKS
  //#define JUCE_ENABLE_ALLOCATION_HOOKS 0
-#endif
-
-#ifndef    JUCE_ENABLE_AUDIO_GUARD
- //#define JUCE_ENABLE_AUDIO_GUARD 0
 #endif
 
 //==============================================================================

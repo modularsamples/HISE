@@ -82,7 +82,8 @@ struct HiseJavascriptEngine::RootObject::ArrayClass : public DynamicObject
 
 		if (Array<var>* array = a.thisObject.getArray())
 		{
-			WARN_IF_AUDIO_THREAD(a.numArguments + array->size() >= array->getNumAllocated(), ScriptGuard::ArrayResizing);
+	
+        
 
 			for (int i = 0; i < a.numArguments; ++i)
 				array->add(a.arguments[i]);

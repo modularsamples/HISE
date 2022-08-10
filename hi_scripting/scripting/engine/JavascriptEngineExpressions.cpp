@@ -133,7 +133,6 @@ struct HiseJavascriptEngine::RootObject::ArraySubscript : public Expression
 		{
 			const int i = index->getResult(s);
 
-			WARN_IF_AUDIO_THREAD(i >= array->getNumAllocated(), ScriptAudioThreadGuard::ArrayResizing);
 
 			while (array->size() < i)
 				array->add(var::undefined());
